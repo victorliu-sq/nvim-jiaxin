@@ -24,11 +24,11 @@ local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- set keybinds
-	keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
-	keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- got to declaration
-	keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- see definition and make edits in window
-	keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- go to implementation
-	keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- go to implementation
+	keymap.set("n", "<leader>gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+	keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, opts) -- got to declaration
+	keymap.set("n", "<leader>gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- see definition and make edits in window
+	keymap.set("n", "<leader>gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- go to implementation
+	keymap.set("n", "<leader>gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- go to implementation
 	keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions
 	keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 	keymap.set("n", "<leader>rn", ":IncRename ", opts) -- smart rename
@@ -101,16 +101,16 @@ lspconfig["gopls"].setup({
 -- })
 
 -- Set up the Solidity LSP with custom settings
-local configs = require 'lspconfig.configs'
+local configs = require("lspconfig.configs")
 configs.solidity = {
-  default_config = {
-    cmd = { 'solidity-ls', '--stdio' },
-    filetypes = { 'solidity' },
-    root_dir = lspconfig.util.find_git_ancestor,
-    single_file_support = true,
-  },
+	default_config = {
+		cmd = { "solidity-ls", "--stdio" },
+		filetypes = { "solidity" },
+		root_dir = lspconfig.util.find_git_ancestor,
+		single_file_support = true,
+	},
 }
-lspconfig.solidity.setup {}
+lspconfig.solidity.setup({})
 
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({

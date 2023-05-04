@@ -33,6 +33,10 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- NvimTree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+-- E (expand_all) to expand the entire file tree starting from the root folder (workspace)
+-- W (collapse_all) to close all open folders starting from the root folder
+-- f (find) to open the interactive file search to which search filters can be applied
+-- F to close the interactive search
 
 -- Telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore

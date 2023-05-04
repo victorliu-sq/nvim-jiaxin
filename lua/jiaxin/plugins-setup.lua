@@ -104,6 +104,9 @@ return packer.startup(function(use)
 	use("karb94/neoscroll.nvim")
 	use("petertriho/nvim-scrollbar")
 
+	-- toggle Term
+	use("akinsho/toggleterm.nvim")
+
 	-- The packer_bootstrap variable is typically set when you initially set up Packer and install its required plugins.
 	-- It is used as a flag to indicate that the initial setup of Packer has been completed.
 	if packer_bootstrap then
