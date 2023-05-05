@@ -16,6 +16,7 @@ keymap.set("n", "<leader><Down>", "<C-w>j") -- make split windows equal width
 keymap.set("n", "<leader>=", ":vs<CR>") -- make split windows equal width
 keymap.set("n", "<leader>+", ":sp<CR>") -- make split windows equal width
 keymap.set("n", "<leader>-", ":close<CR>") -- close current split window
+keymap.set("n", "<leader>n", ":wincmd =<CR>") -- make split windows equal width
 
 -- tab
 keymap.set("n", "<leader>to", ":tabnew<CR>") --open new tab
@@ -29,7 +30,7 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 -- Plugin Keybinds
 ----------------------
 -- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
+keymap.set("n", "<leader>m", ":MaximizerToggle<CR>")
 
 -- NvimTree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")

@@ -38,6 +38,7 @@ return packer.startup(function(use)
 
 	-- tmux and split window
 	use("szw/vim-maximizer")
+	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
 	-- plugins - replace with register
 	use("vim-scripts/ReplaceWithRegister")
