@@ -57,8 +57,8 @@ mason_null_ls.setup({
 		"goimports", -- another go's formatter
 		"golangci-lint", -- linter for go
 		"solhint", --linter for solidity
+		"pylint", -- Python linter
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
 })
-

@@ -95,6 +95,28 @@ lspconfig["gopls"].setup({
 	on_attach = on_attach,
 })
 
+lspconfig.pylsp.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		pylsp = {
+			plugins = {
+				pylint = {
+					enabled = true,
+					executable = "pylint", -- Make sure pylint is installed and available in your $PATH
+				},
+				pyflakes = {
+					enabled = true,
+				},
+				pycodestyle = {
+					enabled = true,
+				},
+				-- Enable other plugins if needed
+			},
+		},
+	},
+})
+
 -- lspconfig["solang"].setup({
 -- 	on_attach = on_attach,
 -- 	root_dir = lspconfig.util.root_pattern("hardhat.config.*", ".git"),

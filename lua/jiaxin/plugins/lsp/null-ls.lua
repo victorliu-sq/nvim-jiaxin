@@ -42,7 +42,14 @@ null_ls.setup({
 				return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
 			end,
 		}),
+
+		diagnostics.pylint.with({ -- js/ts linter
+			condition = function(utils)
+				return utils.root_has_file("pylintrc") -- change file extension if you use something else
+			end,
+		}),
 	},
+
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
 		if current_client.supports_method("textDocument/formatting") then
