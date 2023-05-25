@@ -50,6 +50,7 @@ mason_lspconfig.setup({
 mason_null_ls.setup({
 	-- list of formatters & linters for mason to install
 	ensure_installed = {
+		"clang-format",
 		"prettier", -- ts/js/solidity formatter
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
@@ -58,6 +59,9 @@ mason_null_ls.setup({
 		"golangci-lint", -- linter for go
 		"solhint", --linter for solidity
 		"pylint", -- Python linter
+		"yapf", --Python formatters
+		"black",
+		"isort",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

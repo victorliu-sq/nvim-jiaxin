@@ -23,6 +23,12 @@ null_ls.setup({
 		formatting.gofumpt, -- go formatter
 		formatting.goimports, -- go formatter
 
+		formatting.yapf, -- python formatter
+		formatting.black,
+		formatting.isort,
+
+		formatting.clang_format, --  C++ formatter
+
 		diagnostics.golangci_lint.with({ -- Go linter
 			-- only enable golangcli-lint if root has .golangci.yml
 			condition = function(utils)

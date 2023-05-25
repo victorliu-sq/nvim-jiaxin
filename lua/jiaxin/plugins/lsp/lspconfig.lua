@@ -18,6 +18,12 @@ end
 
 local keymap = vim.keymap -- for conciseness
 
+-- creates a new vertical split before jumping to the definition / references
+function GoToDefinitionInSplit()
+	vim.cmd("vsplit") -- Create a new vertical split
+	vim.lsp.buf.definition() -- Go to definition
+end
+
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
 	-- keybind options
@@ -37,6 +43,9 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
 	keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 	keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+
+	--
+	keymap.set("n", "<leader>gd", "<cmd>vs<CR><cmd>Telescope lsp_definitions<CR>", { noremap = true, silent = true })
 
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "tsserver" then
@@ -115,6 +124,19 @@ lspconfig.pylsp.setup({
 			},
 		},
 	},
+})
+
+lspconfig["cmake"].setup({
+	cmd = { "cmake-language-server" },
+	filetypes = { "cmake" },
+	root_dir = lspconfig.util.root_pattern("compile_commands.json", "CMakeLists.txt", ".git"),
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig["clangd"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 -- lspconfig["solang"].setup({
