@@ -26,7 +26,7 @@ mason_lspconfig.setup({
 		"html",
 		"cssls",
 		"tailwindcss",
-		"sumneko_lua",
+		--"sumneko_lua",
 		"emmet_ls",
 		"clangd", --C / C++
 		"cmake", -- Cmake
@@ -34,13 +34,7 @@ mason_lspconfig.setup({
 		"docker_compose_language_service", -- docker_compose
 		"golangci_lint_ls", -- go
 		"gopls", -- go
-		"quick_lint_js", -- JS
-		"tsserver", -- JS
-		"vtsls", -- JS
 		"pylsp", -- Python
-		"solang", -- Solidity
-		"solc", -- Solidity
-		"solidity-ls", -- Solidity
 		"yamlls", -- Yaml
 	},
 	-- auto-install configured servers (with lspconfig)
@@ -51,13 +45,11 @@ mason_null_ls.setup({
 	-- list of formatters & linters for mason to install
 	ensure_installed = {
 		"clang-format",
-		"prettier", -- ts/js/solidity formatter
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
 		"gofumpt", -- replacement for go's formatter
 		"goimports", -- another go's formatter
 		"golangci-lint", -- linter for go
-		"solhint", --linter for solidity
 		"pylint", -- Python linter
 		"yapf", --Python formatters
 		"black",

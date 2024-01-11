@@ -139,11 +139,6 @@ lspconfig["clangd"].setup({
 	on_attach = on_attach,
 })
 
--- lspconfig["solang"].setup({
--- 	on_attach = on_attach,
--- 	root_dir = lspconfig.util.root_pattern("hardhat.config.*", ".git"),
--- })
-
 -- Set up the Solidity LSP with custom settings
 local configs = require("lspconfig.configs")
 configs.solidity = {

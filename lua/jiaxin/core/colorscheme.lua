@@ -3,7 +3,6 @@
 -- 	print("Colorscheme not found!")
 -- 	return
 -- end
---
 -- vmd.cmd("colorscheme github_light")
 
 -- Example config in Lua

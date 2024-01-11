@@ -52,6 +52,8 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 keymap.set("n", "<leader>w", "viw") -- selectcurrent word
 keymap.set("n", "<leader>f", "V$%") -- selectcurrent function
 
+-- comment
+
 ----------------------
 -- Plugin Keybinds
 ----------------------

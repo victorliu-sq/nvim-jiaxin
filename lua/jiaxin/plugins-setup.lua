@@ -88,6 +88,8 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
+	-- ccls cuda programming
+
 	-- treesitter configuration
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -107,6 +109,14 @@ return packer.startup(function(use)
 
 	-- toggle Term
 	use("akinsho/toggleterm.nvim")
+
+	use({
+		"chipsenkbeil/distant.nvim",
+		branch = "v0.3",
+		config = function()
+			require("distant"):setup()
+		end,
+	})
 
 	-- The packer_bootstrap variable is typically set when you initially set up Packer and install its required plugins.
 	-- It is used as a flag to indicate that the initial setup of Packer has been completed.
